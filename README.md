@@ -8,9 +8,9 @@ This is a personal notebook of basic python. I try to mark down the simple knowl
 - Control flow
 - Function and class
 - Error
-- Standard modules
+- [Standard modules](module-and-package.markdown)
 - Numpy
-- Pandas
+- [Pandas](pandas-notes.markdown)
 - Regex
 
 ## Reference
