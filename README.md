@@ -7,9 +7,8 @@ This is a personal notebook of basic python. I try to mark down the simple knowl
 - [Data structure](data-structure.markdown)
 - Control flow
 - Function and class
-- Error
 - [Standard modules](module-and-package.markdown)
-- Numpy
+- [Numpy](numpy-notes.markdown)
 - [Pandas](pandas-notes.markdown)
 - [Regex](regex-notes.markdown)
 
@@ -19,3 +18,4 @@ This is a personal notebook of basic python. I try to mark down the simple knowl
 [2] https://pythonbasics.org/  
 [3] https://chrisalbon.com/
 [4] https://diveintopython3.net/index.html
+[5] https://numpy.org/devdocs/user/quickstart.html#an-example
