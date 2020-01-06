@@ -162,7 +162,7 @@ a_set.difference(b_set)
 {7, 10}
 
 
-## dictionary
+## Dictionary
 mutable, a set of key-value pairs, access a value by its key.
 
 - An example
