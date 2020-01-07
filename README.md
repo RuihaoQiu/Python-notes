@@ -5,8 +5,8 @@ This is a personal notebook of basic python. I try to mark down the simple knowl
 
 - [Number and string](number-and-string.markdown)
 - [Data structure](data-structure.markdown)
-- Control flow
-- Function and class
+- [Control flow](control-flow.markdown)
+- [Generator, function and class](generator-function-class.markdown)
 - [Standard modules](module-and-package.markdown)
 - [Numpy](numpy-notes.markdown)
 - [Pandas](pandas-notes.markdown)
@@ -16,6 +16,6 @@ This is a personal notebook of basic python. I try to mark down the simple knowl
 
 [1] https://docs.python.org/3.7/tutorial/  
 [2] https://pythonbasics.org/  
-[3] https://chrisalbon.com/
-[4] https://diveintopython3.net/index.html
+[3] https://chrisalbon.com/  
+[4] https://diveintopython3.net/index.html  
 [5] https://numpy.org/devdocs/user/quickstart.html#an-example
