@@ -18,4 +18,5 @@ This is a personal notebook of basic python. I try to mark down the simple knowl
 [2] https://pythonbasics.org/  
 [3] https://chrisalbon.com/  
 [4] https://diveintopython3.net/index.html  
-[5] https://numpy.org/devdocs/user/quickstart.html#an-example
+[5] https://numpy.org/devdocs/user/quickstart.html#an-example  
+[6] https://book.pythontips.com/en/latest/index.html
