@@ -54,3 +54,53 @@ binary_search(A, 7, l=min(A), r=max(A))
 
 ### Generator
 A generator is an iterator, but we can only iterate over them once.
+It use yield instead of return in function.
+
+- Example
+```
+def generator_function(a_list):
+    for i in a_list:
+        yield i
+a_list = list(range(10))
+gf = generator_function(a_list)
+```
+```
+next(gf)
+```
+0
+```
+next(gf)
+```
+1
+```
+for i in gf:
+    print(i)
+```
+2<br/>
+3  
+4
+
+- Batch generator  
+a huge data set should be loaded in chunks.
+```
+A = list(range(10))
+def batch_generator(A, batch_size):
+    n = 0
+    while True:
+        data = A[n*batch_size:(n+1)*batch_size]
+        n = n + 1
+        if not data:
+            break
+        yield data
+```
+```
+for s in batch_generator(A,2):
+    print(s)
+```
+[0, 1]  
+[2, 3]  
+[4, 5]  
+[6, 7]  
+[8, 9]  
+
+### Class
