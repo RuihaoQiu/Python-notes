@@ -104,3 +104,21 @@ for s in batch_generator(A,2):
 [8, 9]  
 
 ### Class
+use `class` to define a class  
+*object* can be another Class  
+`__int__` function initialize objects, whenever an instance of a class is created its `__init__` method is called  
+`self` represents the class, all instance method should start with `self` in a class.
+```
+class Cal(object):
+    pi = 3.142
+
+    def __init__(self, radius):
+        self.radius = radius
+
+    def area(self):
+        return self.pi * (self.radius ** 2)
+
+a = Cal(32)
+a.area()
+```
+3217.408
