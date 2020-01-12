@@ -117,3 +117,37 @@ Matches Unicode whitespace characters (which includes [ \t\n\r\f\v])
 \w  
 For Unicode (str) patterns:
 Matches Unicode word characters, equivalent to [a-zA-Z0-9_].
+
+### Example
+```
+def clean(str_input):
+    """Clean input string by keeping only Unicode ([a-zA-Z0-9_]) patterns and dot(.)
+
+    input
+    --------
+    str_input : string
+        any type of string
+
+    output
+    --------
+    str_clean : string
+        lower case string without any special characters in the pattern.
+
+    notes
+    --------
+    - clean string
+    - remove multiple spaces
+    - lower case
+    """
+    sep = re.compile(r"[^\w.]")
+    try:
+        str_clean = sep.sub(" ", str_input)
+        str_clean = re.sub("\s+", " ", str_clean).strip()
+        return str_clean.lower()
+    except:
+        return ""
+```
+```
+clean("fwoejurw#5r[x]few2\.3540#%###&^^*}$%$#&%*&(!)")
+```
+'fwoejurw 5r x few2 .3540'

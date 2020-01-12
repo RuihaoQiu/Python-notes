@@ -6,7 +6,7 @@ This is a personal notebook of basic python. I try to mark down the simple knowl
 - [Number and string](number-and-string.markdown)
 - [Data structure](data-structure.markdown)
 - [Control flow](control-flow.markdown)
-- [Generator, function and class](generator-function-class.markdown)
+- [Function, generator and class](function-generator-class.markdown)
 - [Standard modules](module-and-package.markdown)
 - [Numpy](numpy-notes.markdown)
 - [Pandas](pandas-notes.markdown)

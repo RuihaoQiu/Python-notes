@@ -2,10 +2,10 @@
 
 ### Python module
 
-example.py
+A piece of script `example.py`
 
 ```
-s = "If Comrade Napoleon says it, it must be right."
+s = "Hello."
 a = [100, 200, 300]
 
 def foo(arg):
@@ -13,10 +13,8 @@ def foo(arg):
 
 class Foo:
     pass
-    
-if (__name__ == '__main__'):
-	"""execute as standalone script"""
-    print('Executing as standalone script')
+
+if __name__ == '__main__':
     print(s)
     print(a)
     foo('quux')
@@ -25,100 +23,99 @@ if (__name__ == '__main__'):
 ```
 
 
-
-execute example
-
-```
->>> import example
->>> print(mod.s)
-If Comrade Napoleon says it, it must be right.
->>> example.a
-[100, 200, 300]
->>> example.foo(['quux', 'corge', 'grault'])
-arg = ['quux', 'corge', 'grault']
->>> x = example.Foo()
->>> x
-<example.Foo object at 0x03C181F0>
-
->>> from example import s, foo
->>> s
-'If Comrade Napoleon says it, it must be right.'
->>> foo('quux')
-arg = quux
-
->>> from example import Foo
->>> x = Foo()
->>> x
-<example.Foo object at 0x02E3AD50>
-
->>> import mod as my_module
->>> my_module.a
-[100, 200, 300]
->>> my_module.foo('qux')
-arg = qux
-```
-
-run as standalone script
-
-```
-C:\Users\john\Documents>python fact.py 6
-720
-```
-
-
-
-#### The Module Search Path
+#### Execute example
 
 ```
 import example
 ```
 
 ```
->>> import sys
->>> sys.path
-['', 'C:\\Users\\john\\Documents\\Python\\doc', 'C:\\Python36\\Lib\\idlelib',
-'C:\\Python36\\python36.zip', 'C:\\Python36\\DLLs', 'C:\\Python36\\lib',
-'C:\\Python36', 'C:\\Python36\\lib\\site-packages']
-
->>> sys.path.append(r'C:\Users\john')
->>> sys.path
-['', 'C:\\Users\\john\\Documents\\Python\\doc', 'C:\\Python36\\Lib\\idlelib',
-'C:\\Python36\\python36.zip', 'C:\\Python36\\DLLs', 'C:\\Python36\\lib',
-'C:\\Python36', 'C:\\Python36\\lib\\site-packages', 'C:\\Users\\john']
->>> import example
-
->>> import example
->>> mod.__file__
-'C:\\Users\\john\\mod.py'
-
->>> import re
->>> re.__file__
-'C:\\Python36\\lib\\re.py'
+print(example.s)
+print(example.a)
+```
+Hello.  
+[100, 200, 300]
 
 ```
-
-add path permanently, in .profile add
-
-``` 
-export PYTHONPATH = "path"
+import example as my_module
+print(my_module.s)
 ```
-
-
-
-reload module
+Hello.
 
 ```
->>> import example
->>> import importlib
->>> importlib.reload(example)
+from example import s
+print(s)
 ```
+Hello.
 
+```
+from example import foo
+foo('abc')
+```
+arg = abc
+
+```
+from example import Foo
+x = Foo()
+x
+```
+<example.Foo at 0x10ecace80>
+
+Run as standalone script
+```
+Python example.py
+```
+Hello.  
+[100, 200, 300]  
+arg = quux  
+<\_\_main__.Foo object at 0x10ed7ed30>
+
+
+#### The Module Search Path
+```
+import sys
+sys.path
+```
+['',
+ '/Users/qiuruihao/miniconda2/envs/py3/lib/python36.zip',
+ '/Users/qiuruihao/miniconda2/envs/py3/lib/python3.6',
+ '/Users/qiuruihao/miniconda2/envs/py3/lib/python3.6/lib-dynload',
+ '/Users/qiuruihao/miniconda2/envs/py3/lib/python3.6/site-packages',
+ '/Users/qiuruihao/miniconda2/envs/py3/lib/python3.6/site-packages/aeosa',
+ '/Users/qiuruihao/miniconda2/envs/py3/lib/python3.6/site-packages/IPython/extensions',
+ '/Users/qiuruihao/.ipython']
+
+```
+sys.path.append(r'C:\Users\john')
+sys.path
+```
+['',
+ '/Users/qiuruihao/miniconda2/envs/py3/lib/python36.zip',
+ '/Users/qiuruihao/miniconda2/envs/py3/lib/python3.6',
+ '/Users/qiuruihao/miniconda2/envs/py3/lib/python3.6/lib-dynload',
+ '/Users/qiuruihao/miniconda2/envs/py3/lib/python3.6/site-packages',
+ '/Users/qiuruihao/miniconda2/envs/py3/lib/python3.6/site-packages/aeosa',
+ '/Users/qiuruihao/miniconda2/envs/py3/lib/python3.6/site-packages/IPython/extensions',
+ '/Users/qiuruihao/.ipython', '/Users/john']
+
+```
+import example
+example.__file__
+```
+'/Users/qiuruihao/Google Drive/Github/Python-notes/Notebooks/example.py'
+
+### Reload module
+```
+import example
+import importlib
+importlib.reload(example)
+```
 
 
 ### Python Package
+The `pkg` folder contains two scripts - `mod1.py` and `mod2.py`
 
 mod1.py
-
 ```
 def foo():
     print('[mod1] foo()')
@@ -128,7 +125,6 @@ class Foo:
 ```
 
 mod2.py
-
 ```
 def bar():
     print('[mod2] bar()')
@@ -138,55 +134,63 @@ class Bar:
 ```
 
 execute
-
 ```
->>> import pkg.mod1, pkg.mod2
->>> pkg.mod1.foo()
+import pkg.mod1, pkg.mod2
+pkg.mod1.foo()
+```
 [mod1] foo()
->>> x = pkg.mod2.Bar()
->>> x
+```
+x = pkg.mod2.Bar()
+x
+```
 <pkg.mod2.Bar object at 0x033F7290>
 
->>> from pkg.mod1 import foo
->>> foo()
+```
+from pkg.mod1 import foo
+foo()
+```
 [mod1] foo()
 
->>> from pkg.mod2 import Bar as Qux
->>> x = Qux()
->>> x
-<pkg.mod2.Bar object at 0x036DFFD0>
 ```
-
+from pkg.mod2 import Bar as Qux
+x = Qux()
+x
+```
+<pkg.mod2.Bar object at 0x036DFFD0>
 
 
 #### Package Initialization
 
 If a file named `__init__.py` is present in a package directory, it is invoked when the package or a module in the package is imported. This can be used for execution of package initialization code, such as initialization of package-level data.
 
-\__init.py__
-
+`__init__.py`
 ```
 print(f'Invoking __init__.py for {__name__}')
 A = ['quux', 'corge', 'grault']
-
 print(f'Invoking __init__.py for {__name__}')
 import pkg.mod1, pkg.mod2
 ```
+```
+import pkg
+```
+Invoking \_\_init__.py for pkg
 
 ```
->>> import pkg
-Invoking __init__.py for pkg
->>> pkg.A
+pkg.A
+```
 ['quux', 'corge', 'grault']
 
->>> pkg.mod1.foo()
-[mod1] foo()
->>> pkg.mod2.bar()
-[mod2] bar()
 ```
+pkg.mod1.foo()
+```
+[mod1] foo()
+```
+pkg.mod2.bar()
+```
+[mod2] bar()
 
-if \__init__ contains:
 
+If `__init__.py` contains:
 ```
 __all__ = [
         'mod1',
@@ -197,22 +201,26 @@ __all__ = [
 ```
 
 ```
->>> dir()
-['__annotations__', '__builtins__', '__doc__', '__loader__', '__name__',
-'__package__', '__spec__']
-
->>> from pkg import *
->>> dir()
-['__annotations__', '__builtins__', '__doc__', '__loader__', '__name__',
-'__package__', '__spec__', 'mod1', 'mod2', 'mod3', 'mod4']
->>> mod2.bar()
-[mod2] bar()
->>> mod4.Qux
-<class 'pkg.mod4.Qux'>
+dir()
 ```
+['\_\_annotations__', '\_\_builtins__', '\_\_doc__', '\_\_loader__', '\_\_name__',
+'\_\_package__', '\_\_spec__']
+
+```
+from pkg import *
+dir()
+```
+['\_\_annotations__', '\_\_builtins__', '\_\_doc__', '\_\_loader__', '\_\_name__',
+'\_\_package__', '\_\_spec__', 'mod1', 'mod2', 'mod3', 'mod4']
+
+```
+mod2.bar()
+```
+[mod2] bar()
+```
+mod4.Qux
+```
+<class 'pkg.mod4.Qux'>
 
 
-
-REF
-
-https://realpython.com/python-modules-packages/
+REF: https://realpython.com/python-modules-packages/
