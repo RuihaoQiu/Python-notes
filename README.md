@@ -3,14 +3,14 @@ This is a personal notebook of basic python. I try to mark down the simple knowl
 
 ## Contents
 
-- [Number and string](number-and-string.markdown)
-- [Data structure](data-structure.markdown)
-- [Control flow](control-flow.markdown)
-- [Function, generator and class](function-generator-class.markdown)
-- [Standard modules](module-and-package.markdown)
-- [Numpy](numpy-notes.markdown)
-- [Pandas](pandas-notes.markdown)
-- [Regex](regex-notes.markdown)
+1. [Number and string](number-and-string.markdown)
+1. [Data structure](data-structure.markdown)
+1. [Control flow](control-flow.markdown)
+1. [Function, generator and class](function-generator-class.markdown)
+1. [Standard modules](module-and-package.markdown)
+1. [Numpy](numpy-notes.markdown)
+1. [Pandas](pandas-notes.markdown)
+1. [Regex](regex-notes.markdown)
 
 ## Reference
 
