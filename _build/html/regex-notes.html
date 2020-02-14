@@ -1,0 +1,336 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Regex notes &mdash; Python notes  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Pandas notes" href="pandas-notes.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Python notes
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="number-and-string.html">Number and string</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data-structure.html">Data structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="control-flow.html">Control flow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="function-generator-class.html">Function, generator and class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module-and-package.html">Module and package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="numpy-notes.html">Numpy notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pandas-notes.html">Pandas notes</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Regex notes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#re-module">re module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#special-characters">Special characters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#example">Example</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Python notes</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Regex notes</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/regex-notes.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="regex-notes">
+<h1>Regex notes<a class="headerlink" href="#regex-notes" title="Permalink to this headline">¶</a></h1>
+<p>This is a personal regex note for daily work, will keep update.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
+</pre></div>
+</div>
+<div class="section" id="re-module">
+<h2>re module<a class="headerlink" href="#re-module" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>re.match(<em>pattern</em>, <em>string</em>) - if zero or more characters <strong>at the beginning of</strong> <em>string</em> match the regular expression <em>pattern</em>, return a corresponding match object.</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">## match</span>
+<span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;project&quot;</span><span class="p">,</span> <span class="s2">&quot;project manager&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>&lt;_sre.SRE_Match object; span=(0, 7), match=’project’&gt;</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">## not match</span>
+<span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;manager&quot;</span><span class="p">,</span> <span class="s2">&quot;project manager&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>re.search(<em>pattern</em>, <em>string</em>) - go through the whole <em>string</em>, look for the first location where the regular expression <em>pattern</em> produces a match.</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">## use search</span>
+<span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;manager&quot;</span><span class="p">,</span> <span class="s2">&quot;project manager&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>&lt;_sre.SRE_Match object; span=(8, 15), match=’manager’&gt;</p>
+<ul class="simple">
+<li><p>re.complie(<em>pattern</em>) - compile a regular expression <em>pattern</em> into a regular expression object, then we can use search, match and other methods. More efficient when the expression will be used several times.</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">## match again</span>
+<span class="n">regex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;project&quot;</span><span class="p">)</span>
+<span class="n">regex</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s2">&quot;project manager&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>&lt;_sre.SRE_Match object; span=(0, 7), match=’project’&gt;</p>
+<ul class="simple">
+<li><p>re.split(<em>pattern</em>, <em>string</em>) - split <em>string</em> by the occurrences of <em>pattern</em>. If parentheses are used in <em>pattern</em>, then the text of the pattern are also returned as part of the resulting list.</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">## split</span>
+<span class="n">re</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="s1">&#39;project manager, IT section&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>[‘project’, ‘manager,’, ‘IT’, ‘section’]</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">## split with more characters</span>
+<span class="n">re</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;[ ,]+&#39;</span><span class="p">,</span> <span class="s1">&#39;project manager, IT section&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>[‘project’, ‘manager’, ‘IT’, ‘section’]</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">## split with parentheses</span>
+<span class="n">re</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;([ ,]+)&#39;</span><span class="p">,</span> <span class="s1">&#39;project manager, IT section&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>[‘project’, ‘ ‘, ‘manager’, ‘, ‘, ‘IT’, ‘ ‘, ‘section’]</p>
+<ul class="simple">
+<li><p>re.sub(<em>pattern</em>, <em>repl</em>, <em>string</em>) - replace the matches in <em>string</em> with <em>repl</em>.</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">## remove any of the special characters</span>
+<span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;[,\.\:\;\!]+&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;project manager, IT section...&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>‘project manager IT section’</p>
+<ul class="simple">
+<li><p>re.findall(<em>pattern</em>, <em>string</em>) - find all non-overlapping matches of <em>pattern</em> in <em>string</em>, return as a list of strings.</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">## find all special character in the pattern</span>
+<span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;[,\.\:\;\!]+&quot;</span><span class="p">,</span> <span class="s2">&quot;project manager, IT section...&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>[‘,’, ‘…’]</p>
+</div>
+<div class="section" id="special-characters">
+<h2>Special characters<a class="headerlink" href="#special-characters" title="Permalink to this headline">¶</a></h2>
+<p>.<br />Matches any character except a newline.</p>
+<p>^<br />Matches the start of the string.</p>
+<p>$<br />Matches the end of the string.</p>
+<p>*<br />Match 0 or more repetitions. ab* will match ‘a’, ‘ab’, or ‘abbbb’ (any number of ‘b’s).</p>
+<p>+<br />Match 1 or more repetitions. ab+ will match ‘ab’, or ‘abbbb’ (any number of ‘b’s), not ‘a’.</p>
+<p>?<br />Match 0 or 1 repetitions. ab? will match ‘a’ or ‘ab’, useful for plural form, birds? will match both ‘bird’ and ‘birds’.</p>
+<p>*?, +?, ??<br />Match as much text as possible.</p>
+<p>\<br />Either escapes special characters (permitting you to match characters like ‘*’, ‘?’, and so forth), or signals a special sequence; special sequences are discussed below.</p>
+<p>[]<br />[abc] will match any of ‘a’, ‘b’, or ‘c’.
+[a-z] will match any lowercase ASCII letter.
+Special characters lose their special meaning inside sets. [(+*)] will match any of the literal characters ‘(‘, ‘+’, ‘*’, or ‘)’.</p>
+<p>|<br />A|B will match either A or B. An arbitrary number of REs can be separated by the ‘|’ in this way, run from left to right, once A matches, B will not be tested further.</p>
+<p>\b<br />Matches the word boundary.</p>
+<p>\d<br />Matches any Unicode decimal digit, equivalent to [0-9]</p>
+<p>\s<br />Matches Unicode whitespace characters (which includes [ \t\n\r\f\v])</p>
+<p>\w<br />For Unicode (str) patterns:
+Matches Unicode word characters, equivalent to [a-zA-Z0-9_].</p>
+</div>
+<div class="section" id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">clean</span><span class="p">(</span><span class="n">str_input</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Clean input string by keeping only Unicode ([a-zA-Z0-9_]) patterns and dot(.)</span>
+
+<span class="sd">    input</span>
+<span class="sd">    --------</span>
+<span class="sd">    str_input : string</span>
+<span class="sd">        any type of string</span>
+
+<span class="sd">    output</span>
+<span class="sd">    --------</span>
+<span class="sd">    str_clean : string</span>
+<span class="sd">        lower case string without any special characters in the pattern.</span>
+
+<span class="sd">    notes</span>
+<span class="sd">    --------</span>
+<span class="sd">    - clean string</span>
+<span class="sd">    - remove multiple spaces</span>
+<span class="sd">    - lower case</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">sep</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;[^\w.]&quot;</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">str_clean</span> <span class="o">=</span> <span class="n">sep</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="n">str_input</span><span class="p">)</span>
+        <span class="n">str_clean</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s2">&quot;\s+&quot;</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="n">str_clean</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">str_clean</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;&quot;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">clean</span><span class="p">(</span><span class="s2">&quot;fwoejurw#5r[x]few2\.3540#%###&amp;^^*}$%$#&amp;%*&amp;(!)&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>‘fwoejurw 5r x few2 .3540’</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="pandas-notes.html" class="btn btn-neutral float-left" title="Pandas notes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Ruihao Qiu
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

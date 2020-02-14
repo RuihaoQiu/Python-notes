@@ -1,0 +1,404 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Module and package &mdash; Python notes  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Numpy notes" href="numpy-notes.html" />
+    <link rel="prev" title="Function, generator and class" href="function-generator-class.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Python notes
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="number-and-string.html">Number and string</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data-structure.html">Data structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="control-flow.html">Control flow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="function-generator-class.html">Function, generator and class</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Module and package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#module">Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#package">Package</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="numpy-notes.html">Numpy notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pandas-notes.html">Pandas notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regex-notes.html">Regex notes</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Python notes</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Module and package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/module-and-package.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-and-package">
+<h1>Module and package<a class="headerlink" href="#module-and-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module">
+<h2>Module<a class="headerlink" href="#module" title="Permalink to this headline">¶</a></h2>
+<p>A piece of script <code class="docutils literal notranslate"><span class="pre">example.py</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;Hello.&quot;</span>
+<span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">300</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">arg</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;arg = </span><span class="si">{arg}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Foo</span><span class="p">:</span>
+    <span class="k">pass</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    <span class="n">foo</span><span class="p">(</span><span class="s1">&#39;quux&#39;</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">Foo</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Execute example</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">example</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">example</span><span class="o">.</span><span class="n">s</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">example</span><span class="o">.</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Hello.<br />[100, 200, 300]</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">example</span> <span class="k">as</span> <span class="nn">my_module</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_module</span><span class="o">.</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Hello.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">example</span> <span class="k">import</span> <span class="n">s</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Hello.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">example</span> <span class="k">import</span> <span class="n">foo</span>
+<span class="n">foo</span><span class="p">(</span><span class="s1">&#39;abc&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>arg = abc</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">example</span> <span class="k">import</span> <span class="n">Foo</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">Foo</span><span class="p">()</span>
+<span class="n">x</span>
+</pre></div>
+</div>
+<p>&lt;example.Foo at 0x10ecace80&gt;</p>
+<p>Run as standalone script</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Python</span> <span class="n">example</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+<p>Hello.<br />[100, 200, 300]<br />arg = quux<br />&lt;__main__.Foo object at 0x10ed7ed30&gt;</p>
+<p><strong>module search path</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span>
+</pre></div>
+</div>
+<p>[‘’,
+‘/Users/qiuruihao/miniconda2/envs/py3/lib/python36.zip’,
+‘/Users/qiuruihao/miniconda2/envs/py3/lib/python3.6’,
+‘/Users/qiuruihao/miniconda2/envs/py3/lib/python3.6/lib-dynload’,
+‘/Users/qiuruihao/miniconda2/envs/py3/lib/python3.6/site-packages’,
+‘/Users/qiuruihao/miniconda2/envs/py3/lib/python3.6/site-packages/aeosa’,
+‘/Users/qiuruihao/miniconda2/envs/py3/lib/python3.6/site-packages/IPython/extensions’,
+‘/Users/qiuruihao/.ipython’]</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;C:\Users\john&#39;</span><span class="p">)</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span>
+</pre></div>
+</div>
+<p>[‘’,
+‘/Users/qiuruihao/miniconda2/envs/py3/lib/python36.zip’,
+‘/Users/qiuruihao/miniconda2/envs/py3/lib/python3.6’,
+‘/Users/qiuruihao/miniconda2/envs/py3/lib/python3.6/lib-dynload’,
+‘/Users/qiuruihao/miniconda2/envs/py3/lib/python3.6/site-packages’,
+‘/Users/qiuruihao/miniconda2/envs/py3/lib/python3.6/site-packages/aeosa’,
+‘/Users/qiuruihao/miniconda2/envs/py3/lib/python3.6/site-packages/IPython/extensions’,
+‘/Users/qiuruihao/.ipython’, ‘/Users/john’]</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">example</span>
+<span class="n">example</span><span class="o">.</span><span class="vm">__file__</span>
+</pre></div>
+</div>
+<p>‘/Users/qiuruihao/Google Drive/Github/Python-notes/Notebooks/example.py’</p>
+<p><strong>Reload module</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">example</span>
+<span class="kn">import</span> <span class="nn">importlib</span>
+<span class="n">importlib</span><span class="o">.</span><span class="n">reload</span><span class="p">(</span><span class="n">example</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="package">
+<h2>Package<a class="headerlink" href="#package" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">pkg</span></code> folder contains two scripts - <code class="docutils literal notranslate"><span class="pre">mod1.py</span></code> and <code class="docutils literal notranslate"><span class="pre">mod2.py</span></code></p>
+<p><em>mod1.py</em></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;[mod1] foo()&#39;</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Foo</span><span class="p">:</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+<p><em>mod2.py</em></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">bar</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;[mod2] bar()&#39;</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Bar</span><span class="p">:</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+<p>execute</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pkg.mod1</span><span class="o">,</span> <span class="nn">pkg.mod2</span>
+<span class="n">pkg</span><span class="o">.</span><span class="n">mod1</span><span class="o">.</span><span class="n">foo</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>[mod1] foo()</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">pkg</span><span class="o">.</span><span class="n">mod2</span><span class="o">.</span><span class="n">Bar</span><span class="p">()</span>
+<span class="n">x</span>
+</pre></div>
+</div>
+<p>&lt;pkg.mod2.Bar object at 0x033F7290&gt;</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pkg.mod1</span> <span class="k">import</span> <span class="n">foo</span>
+<span class="n">foo</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>[mod1] foo()</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pkg.mod2</span> <span class="k">import</span> <span class="n">Bar</span> <span class="k">as</span> <span class="n">Qux</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">Qux</span><span class="p">()</span>
+<span class="n">x</span>
+</pre></div>
+</div>
+<p>&lt;pkg.mod2.Bar object at 0x036DFFD0&gt;</p>
+<p><strong>package initialization</strong></p>
+<p>If a file named <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> is present in a package directory, it is invoked when the package or a module in the package is imported. This can be used for execution of package initialization code, such as initialization of package-level data.</p>
+<p><code class="docutils literal notranslate"><span class="pre">__init__.py</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;Invoking __init__.py for </span><span class="si">{__name__}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">A</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;quux&#39;</span><span class="p">,</span> <span class="s1">&#39;corge&#39;</span><span class="p">,</span> <span class="s1">&#39;grault&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;Invoking __init__.py for </span><span class="si">{__name__}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">pkg.mod1</span><span class="o">,</span> <span class="nn">pkg.mod2</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pkg</span>
+</pre></div>
+</div>
+<p>Invoking __init__.py for pkg</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pkg</span><span class="o">.</span><span class="n">A</span>
+</pre></div>
+</div>
+<p>[‘quux’, ‘corge’, ‘grault’]</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pkg</span><span class="o">.</span><span class="n">mod1</span><span class="o">.</span><span class="n">foo</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>[mod1] foo()</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pkg</span><span class="o">.</span><span class="n">mod2</span><span class="o">.</span><span class="n">bar</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>[mod2] bar()</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> contains:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s1">&#39;mod1&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;mod2&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;mod3&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;mod4&#39;</span>
+        <span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">dir</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>[‘__annotations__’, ‘__builtins__’, ‘__doc__’, ‘__loader__’, ‘__name__’,
+‘__package__’, ‘__spec__’]</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pkg</span> <span class="k">import</span> <span class="o">*</span>
+<span class="nb">dir</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>[‘__annotations__’, ‘__builtins__’, ‘__doc__’, ‘__loader__’, ‘__name__’,
+‘__package__’, ‘__spec__’, ‘mod1’, ‘mod2’, ‘mod3’, ‘mod4’]</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mod2</span><span class="o">.</span><span class="n">bar</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>[mod2] bar()</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mod4</span><span class="o">.</span><span class="n">Qux</span>
+</pre></div>
+</div>
+<p>&lt;class ‘pkg.mod4.Qux’&gt;</p>
+<p><strong>References</strong></p>
+<ul class="simple">
+<li><p>https://realpython.com/python-modules-packages/</p></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="numpy-notes.html" class="btn btn-neutral float-right" title="Numpy notes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="function-generator-class.html" class="btn btn-neutral float-left" title="Function, generator and class" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Ruihao Qiu
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
