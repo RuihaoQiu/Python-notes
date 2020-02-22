@@ -2,7 +2,7 @@
 
 Numpy is one of the most important package for data scientist. Here are some notes from my daily work.
 
-### Import package
+**Import package**
 ```
 import numpy as np
 ```
@@ -42,7 +42,7 @@ np.linspace(0, 2, 10)
 array([ 0.        ,  0.22222222,  0.44444444,  0.66666667,  0.88888889, 1.11111111,  1.33333333,  1.55555556,  1.77777778,  2.        ])
 
 
-### Basic info
+### Basics
 - number of axix
 ```
 matrix.ndim
@@ -65,7 +65,7 @@ matrix.dtype
 dtype('int64')
 
 
-### Basic operations
+### Math operations
 - element-wise
 ```
 a = np.array([[1,1], [0,1]])

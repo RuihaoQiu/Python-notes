@@ -17,36 +17,34 @@
   
 
   
-  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
-    
-    <script type="text/javascript" src="_static/js/theme.js"></script>
 
+  
+  
     
 
   
+
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Pandas notes" href="pandas-notes.html" />
     <link rel="prev" title="Module and package" href="module-and-package.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
+
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
+        <div class="wy-side-nav-search">
           
 
           
@@ -87,16 +85,16 @@
 <li class="toctree-l1"><a class="reference internal" href="function-generator-class.html">Function, generator and class</a></li>
 <li class="toctree-l1"><a class="reference internal" href="module-and-package.html">Module and package</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Numpy notes</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#import-package">Import package</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#create-array">Create array</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#basic-info">Basic info</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#basic-operations">Basic operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#basics">Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#math-operations">Math operations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#select">Select</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#transform">Transform</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="pandas-notes.html">Pandas notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="regex-notes.html">Regex notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyspark.html">PySpark</a></li>
 </ul>
 
             
@@ -164,11 +162,9 @@
   <div class="section" id="numpy-notes">
 <h1>Numpy notes<a class="headerlink" href="#numpy-notes" title="Permalink to this headline">¶</a></h1>
 <p>Numpy is one of the most important package for data scientist. Here are some notes from my daily work.</p>
-<div class="section" id="import-package">
-<h2>Import package<a class="headerlink" href="#import-package" title="Permalink to this headline">¶</a></h2>
+<p><strong>Import package</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 </pre></div>
-</div>
 </div>
 <div class="section" id="create-array">
 <h2>Create array<a class="headerlink" href="#create-array" title="Permalink to this headline">¶</a></h2>
@@ -210,8 +206,8 @@
 </div>
 <p>array([ 0.        ,  0.22222222,  0.44444444,  0.66666667,  0.88888889, 1.11111111,  1.33333333,  1.55555556,  1.77777778,  2.        ])</p>
 </div>
-<div class="section" id="basic-info">
-<h2>Basic info<a class="headerlink" href="#basic-info" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="basics">
+<h2>Basics<a class="headerlink" href="#basics" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>number of axix</p></li>
 </ul>
@@ -241,8 +237,8 @@
 </div>
 <p>dtype(‘int64’)</p>
 </div>
-<div class="section" id="basic-operations">
-<h2>Basic operations<a class="headerlink" href="#basic-operations" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="math-operations">
+<h2>Math operations<a class="headerlink" href="#math-operations" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>element-wise</p></li>
 </ul>
@@ -362,7 +358,7 @@
         <a href="pandas-notes.html" class="btn btn-neutral float-right" title="Pandas notes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="module-and-package.html" class="btn btn-neutral float-left" title="Module and package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="module-and-package.html" class="btn btn-neutral" title="Module and package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -371,7 +367,7 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2020, Ruihao Qiu
+        &copy; Copyright 2020, Ruihao Qiu.
 
     </p>
   </div>
@@ -388,16 +384,33 @@
   
 
 
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/language_data.js"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

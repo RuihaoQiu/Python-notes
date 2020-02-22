@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Number and string &mdash; Python notes  documentation</title>
+  <title>PySpark &mdash; Python notes  documentation</title>
   
 
   
@@ -28,8 +28,7 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Data structure" href="data-structure.html" />
-    <link rel="prev" title="Python notes" href="index.html" /> 
+    <link rel="prev" title="Regex notes" href="regex-notes.html" /> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -79,11 +78,7 @@
             
             
               <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Number and string</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#number">Number</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#string">String</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="number-and-string.html">Number and string</a></li>
 <li class="toctree-l1"><a class="reference internal" href="data-structure.html">Data structure</a></li>
 <li class="toctree-l1"><a class="reference internal" href="control-flow.html">Control flow</a></li>
 <li class="toctree-l1"><a class="reference internal" href="function-generator-class.html">Function, generator and class</a></li>
@@ -91,7 +86,7 @@
 <li class="toctree-l1"><a class="reference internal" href="numpy-notes.html">Numpy notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pandas-notes.html">Pandas notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="regex-notes.html">Regex notes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pyspark.html">PySpark</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">PySpark</a></li>
 </ul>
 
             
@@ -137,13 +132,13 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Number and string</li>
+      <li>PySpark</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/number-and-string.md.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/pyspark.md.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -156,82 +151,46 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="number-and-string">
-<h1>Number and string<a class="headerlink" href="#number-and-string" title="Permalink to this headline">¶</a></h1>
-<p>Number and string are the basic variables in python.</p>
-<div class="section" id="number">
-<h2>Number<a class="headerlink" href="#number" title="Permalink to this headline">¶</a></h2>
-<p>int and float are the most common number.
-python can be used as a calculator.</p>
-<ul class="simple">
-<li><p>Examples</p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># int a, float b</span>
-<span class="n">a</span> <span class="o">=</span> <span class="mi">4</span>
-<span class="n">b</span> <span class="o">=</span> <span class="mf">3.4</span>
+  <div class="section" id="pyspark">
+<h1>PySpark<a class="headerlink" href="#pyspark" title="Permalink to this headline">¶</a></h1>
+<p>PySpark is a Python-based wrapper on top of the Scala API</p>
+<p>In a Python context, PySpark has a way to handle parallel processing
+without the need for the threading or multiprocessing modules.
+All of the complicated communication and synchronization
+between threads, processes, and even different CPUs is handled by Spark.</p>
+<p>Follow <a class="reference external" href="https://sharing.luminis.eu/blog/how-to-install-pyspark-and-apache-spark-on-macos/">this blog</a> to install pyspark.
+It is a bit annoying, pyspark only works with java8.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">pyspark</span>
+<span class="kn">from</span> <span class="nn">pyspark</span> <span class="k">import</span> <span class="n">SparkContext</span>
+<span class="kn">from</span> <span class="nn">TextCleaner</span> <span class="k">import</span> <span class="n">clean_text</span>  <span class="c1">## customized module</span>
+
+<span class="n">sc</span> <span class="o">=</span> <span class="n">SparkContext</span><span class="p">()</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/Top30.csv&quot;</span><span class="p">)</span>
+<span class="n">docs</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">Description</span>
 </pre></div>
 </div>
-<ul class="simple">
-<li><p>Floor division</p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">//</span> <span class="n">b</span>
+<p><code class="docutils literal notranslate"><span class="pre">TextCleaner</span></code> is a customized module can be found in my <a class="reference external" href="https://mlnlp.readthedocs.io/en/latest/Data-cleaning.html">machine leaning notes</a>.
+There are ~70k doc in the file.</p>
+<p><strong>Single core</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">time</span>
+<span class="n">tokenss</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">docs</span><span class="p">):</span>
+    <span class="n">tokenss</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">clean_text</span><span class="p">(</span><span class="n">doc</span><span class="p">))</span>
 </pre></div>
 </div>
-<p>1.0</p>
-<ul class="simple">
-<li><p>Powers</p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">**</span> <span class="n">b</span>
+<p>Wall time: 2min 30s</p>
+<p><strong>Parallel on 4 cores</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">time</span>
+<span class="n">rdd</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">parallelize</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">docs</span><span class="p">),</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">tokenss</span> <span class="o">=</span> <span class="n">rdd</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">clean_text</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="n">out_docs</span> <span class="o">=</span> <span class="n">tokenss</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>111.43047210190387</p>
-<ul class="simple">
-<li><p>round() function -  return a floating point number that is a rounded of a specified number;
-“_” - last printed variables</p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rouond</span><span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>111.43</p>
-</div>
-<div class="section" id="string">
-<h2>String<a class="headerlink" href="#string" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>Examples</p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;Py&quot;</span>
-<span class="n">b</span> <span class="o">=</span> <span class="s2">&quot;thon&quot;</span>
-<span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
-</pre></div>
-</div>
-<p>‘Python’</p>
-<ul class="simple">
-<li><p>Select sub strings</p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-</pre></div>
-</div>
-<p>‘P’</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">b</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span>
-</pre></div>
-</div>
-<p>‘on’</p>
-<ul class="simple">
-<li><p>Lenght of the string - len()</p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>4</p>
-<ul class="simple">
-<li><p>Convert to string - str()</p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">4304</span>
-<span class="nb">str</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>‘4304’</p>
-</div>
+<p>Wall time: 1min 21s</p>
+<p>Image if we need to process 10 millions documents, it takes about 5 hours.
+Parallel computation will largely save our time.</p>
 </div>
 
 
@@ -242,10 +201,8 @@ python can be used as a calculator.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="data-structure.html" class="btn btn-neutral float-right" title="Data structure" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
-      
-        <a href="index.html" class="btn btn-neutral" title="Python notes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="regex-notes.html" class="btn btn-neutral" title="Regex notes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
