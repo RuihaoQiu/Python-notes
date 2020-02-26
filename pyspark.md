@@ -20,7 +20,7 @@ sc = SparkContext()
 df = pd.read_csv("data/Top30.csv")
 docs = df.Description
 ```
-`TextCleaner` is a customized module can be found in my [machine leaning notes](https://mlnlp.readthedocs.io/en/latest/Data-cleaning.html).
+`TextCleaner` is a customized module can be found in my [machine leaning notes](https://mlnlp.readthedocs.io/en/latest/Data-cleaning.html).<br>
 There are ~70k doc in the file.
 
 **Single core**
@@ -41,5 +41,5 @@ out_docs = tokenss.collect()
 ```
 Wall time: 1min 21s
 
-Image if we need to process 10 millions documents, it takes about 5 hours.
+Image if we need to process 10 millions documents, it takes about 5 hours.<br>
 Parallel computation will largely save our time.

@@ -2,7 +2,7 @@
 
 ### Function
 A function can be seen as executable code blocks, which is reusable.
-It start with the def keyword, a function name with input parameters, and use return to output values.
+It start with the `def` keyword, a function name with input parameters, and use return to output values.
 
 - Example
 ```
@@ -25,10 +25,10 @@ def f(x,y):
 ```
 f(1,5)
 ```
-1<br/>
-2  
-3<br/>
-4  
+1<br>
+2<br>
+3<br>
+4<br>
 5
 
 - Binary search
@@ -54,7 +54,7 @@ binary_search(A, 7, l=min(A), r=max(A))
 
 ### Generator
 A generator is an iterator, but we can only iterate over them once.
-It use yield instead of return in function.
+It use `yield` to return an output instead of `return` in function.
 
 - Example
 ```
@@ -76,8 +76,8 @@ next(gf)
 for i in gf:
     print(i)
 ```
-2<br/>
-3  
+2<br>
+3<br>
 4
 
 - Batch generator  
@@ -97,17 +97,17 @@ def batch_generator(A, batch_size):
 for s in batch_generator(A,2):
     print(s)
 ```
-[0, 1]  
-[2, 3]  
-[4, 5]  
-[6, 7]  
-[8, 9]  
+[0, 1]<br>
+[2, 3]<br>
+[4, 5]<br>
+[6, 7]<br>
+[8, 9]<br>
 
 ### Class
-use `class` to define a class  
-*object* can be another class  
-`__int__` function initialize objects, whenever an instance of a class is created its `__init__` method is called  
-`self` represents the class, all instance method should start with `self` in a class.
+use `class` to define a class<br>
+*object* can be another class<br>
+`__int__` function initialize objects, whenever an instance of a class is created its `__init__` method is called<br>
+*self* represents the class, all instance method should start with *self* in a class.
 ```
 class Cal(object):
     pi = 3.142

@@ -40,7 +40,7 @@ regex.match("project manager")
 
 - re.split(*pattern*, *string*) - split *string* by the occurrences of *pattern*. If parentheses are used in *pattern*, then the text of the pattern are also returned as part of the resulting list.
 ```
-## split
+## split with space
 re.split(r' ', 'project manager, IT section')
 ```
 ['project', 'manager,', 'IT', 'section']
@@ -73,49 +73,49 @@ re.findall(r"[,\.\:\;\!]+", "project manager, IT section...")
 
 
 ### Special characters
-\.   
+\.<br>
 Matches any character except a newline.
 
-\^  
+\^<br>
 Matches the start of the string.
 
-\$  
+\$<br>
 Matches the end of the string.
 
-\*  
+\*<br>
 Match 0 or more repetitions. ab* will match 'a', 'ab', or 'abbbb' (any number of 'b's).
 
-\+  
+\+<br>
 Match 1 or more repetitions. ab+ will match 'ab', or 'abbbb' (any number of 'b's), not 'a'.
 
-\?  
+\?<br>
 Match 0 or 1 repetitions. ab? will match 'a' or 'ab', useful for plural form, birds? will match both 'bird' and 'birds'.
 
-\*?, +?, ??  
+\*?, +?, ??<br>
 Match as much text as possible.
 
-\\  
+\\<br>
 Either escapes special characters (permitting you to match characters like '\*', '?', and so forth), or signals a special sequence; special sequences are discussed below.
 
-\[\]  
-[abc] will match any of 'a', 'b', or 'c'.
-[a-z] will match any lowercase ASCII letter.
+\[\]<br>
+[abc] will match any of 'a', 'b', or 'c'.<br>
+[a-z] will match any lowercase ASCII letter.<br>
 Special characters lose their special meaning inside sets. [(\+\*)] will match any of the literal characters '(', '+', '\*', or ')'.
 
-\|  
+\|<br>
 A|B will match either A or B. An arbitrary number of REs can be separated by the '|' in this way, run from left to right, once A matches, B will not be tested further.
 
-\b  
+\b<br>
 Matches the word boundary.
 
-\d  
+\d<br>
 Matches any Unicode decimal digit, equivalent to [0-9]
 
-\s  
+\s<br>
 Matches Unicode whitespace characters (which includes [ \t\n\r\f\v])
 
-\w  
-For Unicode (str) patterns:
+\w<br>
+For Unicode (str) patterns:<br>
 Matches Unicode word characters, equivalent to [a-zA-Z0-9_].
 
 ### Example

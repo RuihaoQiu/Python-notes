@@ -12,10 +12,10 @@ for n, item in enumerate(a_list):
 else:
     print('done!')
 ```
-0 a  
-1 b  
-2 c  
-3 d  
+0 a<br>
+1 b<br>
+2 c<br>
+3 d<br>
 done!
 
 ### if else
@@ -32,10 +32,10 @@ for n, item in enumerate(a_list):
 else:
     print('done!')
 ```
-0 a  
-b<br/>
-2 c  
-d<br/>
+0 a<br>
+b<br>
+2 c<br>
+d<br>
 done!
 
 ### while
@@ -50,8 +50,8 @@ while running:
         print(x, ' is over 5')
         running = False
 ```
-0<br/>
-9<br/>
+0<br>
+9<br>
 9 is over 5
 
 ### break, continues
@@ -65,9 +65,9 @@ for num in range(5):
     else:
         break
 ```
-0 < 3  
-1 < 3  
-2 < 3  
+0 < 3<br>
+1 < 3<br>
+2 < 3<br>
 
 ```
 for num in range(5):
@@ -76,8 +76,8 @@ for num in range(5):
         continue
     print(num, "odd number")
 ```
-0 even number  
-1 odd number  
-2 even number  
-3 odd number  
-4 even number  
+0 even number<br>
+1 odd number<br>
+2 even number<br>
+3 odd number<br>
+4 even number<br>

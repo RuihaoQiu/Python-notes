@@ -32,7 +32,7 @@ import example
 print(example.s)
 print(example.a)
 ```
-Hello.  
+Hello.<br>
 [100, 200, 300]
 
 ```
@@ -64,9 +64,9 @@ Run as standalone script
 ```
 Python example.py
 ```
-Hello.  
-[100, 200, 300]  
-arg = quux  
+Hello.<br>
+[100, 200, 300]<br>
+arg = quux<br>
 <\_\_main__.Foo object at 0x10ed7ed30>
 
 
@@ -109,7 +109,6 @@ import example
 import importlib
 importlib.reload(example)
 ```
-
 
 ### Package
 The `pkg` folder contains two scripts - `mod1.py` and `mod2.py`
@@ -158,8 +157,7 @@ x
 <pkg.mod2.Bar object at 0x036DFFD0>
 
 
-**package initialization**
-
+**Package initialization**
 If a file named `__init__.py` is present in a package directory, it is invoked when the package or a module in the package is imported. This can be used for execution of package initialization code, such as initialization of package-level data.
 
 `__init__.py`
@@ -223,4 +221,4 @@ mod4.Qux
 
 
 **References**  
-- https://realpython.com/python-modules-packages/
+- [https://realpython.com/python-modules-packages/](https://realpython.com/python-modules-packages/)

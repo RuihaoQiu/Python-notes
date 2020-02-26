@@ -17,13 +17,13 @@ b = 3.4
 ```
 a // b
 ```
-  1.0
+1.0
 
 - Powers
 ```
 a ** b
 ```
-  111.43047210190387
+111.43047210190387
 
 - round() function -  return a floating point number that is a rounded of a specified number;
 "_" - last printed variables
@@ -51,7 +51,7 @@ b[2:4]
 ```
 'on'
 
-- Lenght of the string - len()
+- Length of the string - len()
 ```
 len(b)
 ```
