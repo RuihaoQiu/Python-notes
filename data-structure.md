@@ -67,7 +67,7 @@ c
 
 
 ### Tuple
-Tuples are heterogeneous data structures and it is immutable. tuple is faster than list, but less flexible.
+Tuples are heterogeneous data structures and it is immutable. Tuple is faster than list, but less flexible.
 
 - Examples
 ```
@@ -92,14 +92,13 @@ b[0][1]
 
 - Select the second item
 ```
-c = (("apple", 10), ("book", 20), ("bus", 40), ("cat", 60))
+c = (("apple", 10), ("book", 20), ("bus", 40))
 for _, n in c:
     print(n)
 ```
-10  
-20  
-40  
-60  
+10<br>
+20<br>
+40<br>
 
 
 
@@ -139,21 +138,24 @@ True
 b_set = {1, 2, 3, 5, 6, 8, 9, 12, 15, 17, 18, 21}
 ```
 
-- Items in *either* a or b
+- Items in *either* a_set *or* b_set
 ```
 a_set.union(b_set)
+a_set | b_set
 ```
 {1, 2, 3, 5, 6, 7, 8, 9, 10, 12, 15, 17, 18, 21}
 
-- Items in *both* a or b
+- Items in *both* a_set *and* b_set
 ```
 a_set.intersection(b_set)
+a_set & b_set
 ```
 {1, 2, 3, 5, 6}
 
-- Items in a but not in b
+- Items in a_set but not in b_set
 ```
 a_set.difference(b_set)
+a_set - b_set
 ```
 {7, 10}
 
@@ -194,7 +196,7 @@ True
 for x in a_dict:
     print(x, a_dict[x])
 ```
-apple 10  
-book 30  
-bus 40  
-cat 60  
+apple 10<br>
+book 30<br>
+bus 40<br>
+cat 60<br> 
