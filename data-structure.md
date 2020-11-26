@@ -184,6 +184,21 @@ a_dict["apple"]
 a_dict["book"] = 30
 a_dict
 ```
+{'apple': 10, 'book': 30, 'bus': 40, 'cat': 60}
+
+- Add a value
+```
+a_dict["bike"] = 50
+a_dict
+```
+{'apple': 10, 'book': 30, 'bus': 40, 'cat': 60, 'bike': 50}
+
+- Delete a value, only when the key is in the dict.
+```
+del a_dict["apple"]
+a_dict
+```
+{'book': 30, 'bus': 40, 'cat': 60, 'bike': 50}
 
 - Check key
 ```
